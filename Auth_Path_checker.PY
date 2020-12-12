@@ -53,7 +53,7 @@ def ssh_connection(ip):  #Function to use SSH to connect to a device using it's 
         selected_user_file.close()  #close connection to user File
         selected_cmd_file.close()   #close connection to command file
 
-        router_output = connection.recv(65535)  #assign the router output to a variable and fill it with as much iformation as possible
+        router_output = connection.recv(65535)  #assign the router output to a variable and fill it with as much information as possible
         if re.search(b"% Invalid input", router_output): #search the router output for any invalid input commands
             print("Error on Device " + (ip))    #if there are any invalid input commands print Error message
         else:
