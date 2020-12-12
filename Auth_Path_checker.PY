@@ -35,7 +35,7 @@ def ssh_connection(ip):  #Function to use SSH to connect to a device using it's 
         session = paramiko.SSHClient()      #assign the paramiko library SSHclient function call to a variable
         session.set_missing_host_key_policy(paramiko.AutoAddPolicy())#THIS IS A SECURITY RISK IN A DEVELOPMENT ENVIRONMENT REPLACE paramiko.AutoAddPolicy W/ HOST KEYS
         session.connect(ip.rstrip("\n"), username = username, password = password)  #connect to the ip addres given and use the username and password given to log in
-        connection = session.invoke_shell()     #assisgn the invoke_shell function call on the paramiko session to a variable(open a coammnd line shell)
+        connection = session.invoke_shell()     #assign the invoke_shell function call on the paramiko session to a variable(open a coammnd line shell)
 
         connection.send("enable\n") #send enable command to the shell
         connection.send("terminal length 0\n")  #send the terminal length command to the shell
